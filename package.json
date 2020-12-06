@@ -1,0 +1,19 @@
+{
+  "name": "practice-project",
+  "version": "1.0.0",
+  "description": "The todo list is an application that enables users to organize their tasks and keep track of their progress completing them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizabethh34/personal-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elizabethh34/personal-project/issues"
+  },
+  "homepage": "https://github.com/elizabethh34/personal-project#readme"
+}
