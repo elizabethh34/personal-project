@@ -50,3 +50,30 @@ input:focus {
 .submit:hover {
   cursor: pointer;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.headings-container {
+  margin-top: 75px;
+  width: 90%;
+  margin: auto;
+}
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headings li {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.main-container {
+  background-color: rgb(187, 217, 247);
+  width: 600px;
+  margin: auto;
+}
