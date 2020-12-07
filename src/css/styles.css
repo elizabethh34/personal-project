@@ -77,3 +77,25 @@ ul {
   width: 600px;
   margin: auto;
 }
+
+i {
+  color: red;
+  margin-left: 20px;
+}
+
+.date-added {
+  color: gray;
+  font-size: 14px;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.task-side {
+  display: flex;
+}
