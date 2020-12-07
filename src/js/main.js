@@ -52,10 +52,22 @@ class UI {
         this.dateInputElem.value = '';
       }  
     });
+
+    this.todoListElem.addEventListener('click', event => {
+      if (event.target.parentNode.classList.contains('remove')) {
+        const taskToRemove = event.target.closest('li');
+        this.clickDelete(parseInt(taskToRemove.dataset.id));
+      }
+    });    
   }
 
   clickSubmit(description, targetDate) {
     this.todoList.addTask(description, targetDate);
+    this.renderList();
+  }
+
+  clickDelete(id) {
+    this.todoList.removeTask(id);
     this.renderList();
   }
 
