@@ -44,6 +44,7 @@ class UI {
     this.todoListElem = document.querySelector('.todo-list');
     this.descriptionInputElem = document.querySelector('.description-input');
     this.dateInputElem = document.querySelector('.date-input');
+    this.clearAllElem = document.querySelector('.clear-all-button');
 
     this.submitButtonElem.addEventListener('click', event => {
       if (this.descriptionInputElem.value !== '' && this.dateInputElem.value !== '') {
@@ -58,7 +59,12 @@ class UI {
         const taskToRemove = event.target.closest('li');
         this.clickDelete(parseInt(taskToRemove.dataset.id));
       }
-    });    
+    }); 
+    
+    this.clearAllElem.addEventListener('click', event => {
+      this.todoList.todoTasks = [];
+      this.renderList();
+    });
   }
 
   clickSubmit(description, targetDate) {
