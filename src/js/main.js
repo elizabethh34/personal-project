@@ -27,6 +27,21 @@ class UI {
     this.todoList = new TodoList();
     this.submitButtonElem = document.querySelector('.submit');
     this.todoListElem = document.querySelector('.todo-list');
+    this.descriptionInputElem = document.querySelector('.description-input');
+    this.dateInputElem = document.querySelector('.date-input');
+
+    this.submitButtonElem.addEventListener('click', event => {
+      if (this.descriptionInputElem.value !== '' && this.dateInputElem.value !== '') {
+        this.clickSubmit();
+        this.descriptionInputElem.value = '';
+        this.dateInputElem.value = '';
+      }  
+    });
+  }
+
+  clickSubmit() {
+    this.todoList.addTask(this.descriptionInputElem.value, this.dateInputElem.value);
+    this.renderList();
   }
 
   renderList() {
