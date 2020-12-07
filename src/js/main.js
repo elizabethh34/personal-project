@@ -3,8 +3,19 @@ class TodoTask {
   constructor(description, targetdate) {
     this.description = description;
     this.targetDate = targetdate;
-    this.dateAdded;
+    this.dateAdded = this.findDateAdded();
     this.id;
+  }
+
+  findDateAdded() {
+    const months = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "Jun.", "Jul.", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const monthNumber = currentDate.getMonth();
+    const month = months[monthNumber];
+    const day = currentDate.getDate();
+  
+    return `${month} ${day}, ${year}`;
   }
 }
 
