@@ -21,3 +21,12 @@ class TodoList {
     this.todoTasks.push(newTask);
   }
 }
+
+class UI {
+  constructor() {
+    this.todoList = new TodoList();
+    this.submitButtonElem = document.querySelector('.submit');
+    this.descriptionInputValue = document.querySelector('.description-input');
+    this.dateInputValue = document.querySelector('.date-input');
+  }
+}
