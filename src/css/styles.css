@@ -99,3 +99,21 @@ i {
 .task-side {
   display: flex;
 }
+
+.clear-all-button {
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+}
+
+.clear-all-button:focus {
+  outline: none;
+}
+
+.clear-all-button:hover {
+  cursor: pointer;
+}
+
+.clear-all {
+  text-align: center;
+}
