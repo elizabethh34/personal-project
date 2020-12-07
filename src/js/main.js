@@ -31,6 +31,10 @@ class TodoList {
     this.id++;
     this.todoTasks.push(newTask);
   }
+
+  removeTask(id) {
+    this.todoTasks = this.todoTasks.filter(task => task.id !== id);
+  }
 }
 
 class UI {
@@ -43,15 +47,15 @@ class UI {
 
     this.submitButtonElem.addEventListener('click', event => {
       if (this.descriptionInputElem.value !== '' && this.dateInputElem.value !== '') {
-        this.clickSubmit();
+        this.clickSubmit(this.descriptionInputElem.value, this.dateInputElem.value);
         this.descriptionInputElem.value = '';
         this.dateInputElem.value = '';
       }  
     });
   }
 
-  clickSubmit() {
-    this.todoList.addTask(this.descriptionInputElem.value, this.dateInputElem.value);
+  clickSubmit(description, targetDate) {
+    this.todoList.addTask(description, targetDate);
     this.renderList();
   }
 
@@ -59,7 +63,7 @@ class UI {
     this.todoListElem.innerHTML = "";
     this.todoList.todoTasks.forEach(task => {
       this.todoListElem.insertAdjacentHTML("afterbegin", 
-      `<li data-id>
+      `<li data-id=${task.id}>
         <div class="task-info">
           <div class="task-description">${task.description}</div>
           <div class="date-added">${task.dateAdded}</div>
