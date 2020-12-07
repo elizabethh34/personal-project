@@ -78,9 +78,13 @@ ul {
   margin: auto;
 }
 
-i {
+.remove i {
   color: red;
   margin-left: 20px;
+}
+
+.remove i:hover {
+  cursor: pointer;
 }
 
 .date-added {
@@ -98,6 +102,16 @@ i {
 
 .task-side {
   display: flex;
+}
+
+.task-info {
+  display: flex;
+}
+
+.check-mark {
+  display: none;
+  margin-right: 10px;
+  color: rgb(33, 95, 33);
 }
 
 .clear-all-button {

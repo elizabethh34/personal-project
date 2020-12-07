@@ -83,8 +83,13 @@ class UI {
       this.todoListElem.insertAdjacentHTML("afterbegin", 
       `<li data-id=${task.id}>
         <div class="task-info">
-          <div class="task-description">${task.description}</div>
-          <div class="date-added">${task.dateAdded}</div>
+          <div class="check-mark">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="description-container">
+            <div class="task-description">${task.description}</div>
+            <div class="date-added">${task.dateAdded}</div>
+          </div>
         </div>
         <div class="task-side">
           <div class="target-date">${task.targetDate}</div>
