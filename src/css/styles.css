@@ -135,6 +135,7 @@ ul {
 .clear-all-button {
   padding: 10px;
   border-radius: 3px;
+  margin-bottom: 30px;
 }
 
 .clear-all-button:focus {
