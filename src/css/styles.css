@@ -108,10 +108,18 @@ ul {
   display: flex;
 }
 
+.task-description:hover {
+  cursor: pointer;
+}
+
 .check-mark {
   display: none;
   margin-right: 10px;
-  color: rgb(33, 95, 33);
+  color: rgb(28, 141, 28);
+}
+
+.completed {
+  display: inline;
 }
 
 .clear-all-button {

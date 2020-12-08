@@ -59,6 +59,12 @@ class UI {
         const taskToRemove = event.target.closest('li');
         this.clickDelete(parseInt(taskToRemove.dataset.id));
       }
+
+      if (event.target.classList.contains('task-description')) {
+        const completeItem = event.target.closest('.task-info');
+        const completeItemCheck = completeItem.firstElementChild;
+        completeItemCheck.classList.toggle('completed');
+      }
     }); 
     
     this.clearAllElem.addEventListener('click', event => {
