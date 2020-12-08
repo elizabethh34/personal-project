@@ -5,6 +5,7 @@ class TodoTask {
     this.targetDate = targetdate;
     this.dateAdded = this.findDateAdded();
     this.id;
+    this.completed = false;
   }
 
   findDateAdded() {
@@ -61,9 +62,16 @@ class UI {
       }
 
       if (event.target.classList.contains('task-description')) {
-        const completeItem = event.target.closest('.task-info');
-        const completeItemCheck = completeItem.firstElementChild;
-        completeItemCheck.classList.toggle('completed');
+        const completeItem = event.target.closest('li');
+        const id = parseInt(completeItem.dataset.id);
+        
+        for (let task of this.todoList.todoTasks) {
+          if (task.id == id) {
+            task.completed = true;
+          }
+        }
+        
+        this.renderList();
       }
     }); 
     
@@ -85,11 +93,20 @@ class UI {
 
   renderList() {
     this.todoListElem.innerHTML = "";
+
     this.todoList.todoTasks.forEach(task => {
+      let status;
+
+      if (task.completed) {
+        status = 'completed';
+      } else {
+        status = 'not-complete';
+      }
+      
       this.todoListElem.insertAdjacentHTML("afterbegin", 
       `<li data-id=${task.id}>
         <div class="task-info">
-          <div class="check-mark">
+          <div class="${status} check-mark">
             <i class="fas fa-check"></i>
           </div>
           <div class="description-container">
